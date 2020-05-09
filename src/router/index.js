@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Dashboard from "../components/Dashboard";
 import inicio from "../components/inicio.vue";
 import registrar from "../components/registrar.vue";
 import menu_buscar_mas from "../components/menu_buscar_mas";
@@ -9,9 +10,12 @@ import publicar_mas_en from "../components/publicar_mas_en";
 import publicar_mas_per from "../components/publicar_mas_per";
 import ver_mascotas_encontradas from "../components/ver_mascotas_encontradas";
 
+
+
 Vue.use(VueRouter)
 
   const routes = [
+
   
     {
       path:"/", component:inicio
@@ -43,10 +47,19 @@ Vue.use(VueRouter)
 {
     path:"/publicar_mas_per", component:publicar_mas_per
 },
+
+{
+  path: "/Dashboard", component: Dashboard
+
+},
+
 ]
+
+
 
 const router = new VueRouter({
   routes
 })
 
 export default router
+

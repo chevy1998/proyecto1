@@ -17,7 +17,7 @@
 
             <p class="qwe"> </p>
 
-            <input type="text" placeholder="Nombre completo" class="input3">
+            <input id="name" type="text" name="name" placeholder="Nombre completo" class="input3" >
 
         </div>
 
@@ -25,7 +25,7 @@
 
                 <p class="rty"></p>
 
-                <input type="text" placeholder="Correo Electronico" class="input4">
+                <input id="email" type="text" name="email" placeholder="Correo Electronico" class="input4" >
 
         </div>
 
@@ -33,7 +33,7 @@
 
                 <p class="iop"></p>
 
-                <input type="text" placeholder="Nombre de usuario" class="input5">
+                <input id="user" type="text" name="user" placeholder="Nombre de usuario" class="input5" >
 
         </div>
 
@@ -41,7 +41,7 @@
 
                 <p class="bnm"></p>
 
-                <input type="text" placeholder="Contraseña" class="input6">
+                <input id="password" type="pass" name="password" placeholder="Contraseña" class="input6" >
 
         </div>
 
@@ -60,8 +60,6 @@
         </div>
 
 
-
-
     </form>
     
 </div>
@@ -69,7 +67,39 @@
 </template>
 
 <script>
+
+import firebase from "firebase";
+
+
 export default {
+
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        password: ""
+      },
+      error: null
+    };
+  },
+  methods: {
+    submit() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.form.email, this.form.password)
+        .then(data => {
+          data.user
+            .updateProfile({
+              displayName: this.form.name
+            })
+            .then(() => {});
+        })
+        .catch(err => {
+          this.error = err.message;
+        });
+    }
+  }
     
 };
 </script>

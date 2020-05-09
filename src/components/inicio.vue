@@ -13,7 +13,9 @@
 
             <p class="iee"> </p>
 
-            <input type="text" placeholder="Nombre de usuario" class="input">
+    
+                     
+            <input id="email" type="text" name="email" placeholder="Correo electronico" class="input"  >
 
 
         </div> 
@@ -21,8 +23,8 @@
             <div>
 
                 <p class="iee2"></p>
-
-                <input type="text" placeholder="Contraseña" class="input2">
+       
+                <input id="password" type="password" name="password" placeholder="Contraseña" class="input2" >
 
             </div>
 
@@ -61,8 +63,34 @@
 </template>
 
 <script>
+
+import firebase from "firebase";
+
 export default { 
-};     
+
+    data() {
+    return {
+      form: {
+        email: "",
+        password: ""
+      },
+      error: null
+    };
+  },
+  methods: {
+    submit() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .then(data => {
+          this.$router.replace({ name: "Dashboard" });
+        })
+        .catch(err => {
+          this.error = err.message;
+        });
+    }
+  }
+};      
 </script>
 
 <style scoped>
