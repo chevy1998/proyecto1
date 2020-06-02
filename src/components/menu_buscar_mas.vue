@@ -1,259 +1,228 @@
 <template>
+	<div>
+		<div>
+			<p class="texto">¡Hola!, gracias por formar parte de esta comunidad.</p>
+		</div>
 
-<div>
+		<div>
+			<router-link to="ver_mascotas_encontradas">
+				<input type="submit" value="Ver mascotas extraviadas" class="buttonIV" />
+			</router-link>
+		</div>
 
-    <div>
+		<div>
+			<router-link to="busco_a_mi_familia">
+				<input type="submit" value="Ver mascotas encontradas" class="buttonV" />
+			</router-link>
+		</div>
 
-        <p class="texto"> ¡Hola!, gracias por formar parte de esta comunidad.</p>
+		<div>
+			<router-link to="publicar_mas_per">
+				<input type="submit" value="Publicar mi mascota desaparecida" class="buttonVI" />
+			</router-link>
+		</div>
 
-    </div>
+		<div>
+			<router-link to="publicar_mas_en">
+				<input type="submit" value="Publicar mascota encontrada" class="buttonVII" />
+			</router-link>
+		</div>
 
-    <div>
-        
-        <router-link to="ver_mascotas_encontradas">
-
-        <input type="submit" value="Ver mascotas extraviadas" class="buttonIV">
-
-        </router-link>
-
-    </div>
-
-    <div>
-        <router-link to="busco_a_mi_familia">
-
-        <input type="submit" value="Ver mascotas encontradas" class="buttonV">
-
-        </router-link>
-
-    </div>
-
-    <div>
-        <router-link to="publicar_mas_per">
-
-        <input type="submit" value="Publicar mi mascota desaparecida" class="buttonVI">
-
-        </router-link>
-
-    </div>
-
-    <div>
-        <router-link to="publicar_mas_en">
-
-        <input type="submit" value="Publicar mascota encontrada" class="buttonVII">
-
-        </router-link>
-
-    </div>
-
-    <div>
-
-        <router-link to="/">
-
-        <input type="submit" value="CERRAR SESION" class="cerrarsesion">
-
-        </router-link>
-
-    </div>
-
-
-  
-</div>
-
+		<div>
+			<input @click="signOut" type="submit" value="CERRAR SESION" class="cerrarsesion" />
+		</div>
+	</div>
 </template>
 
 <script>
+import firebase from 'firebase';
 export default {
-    
+	methods: {
+		signOut() {
+			firebase
+				.auth()
+				.signOut()
+				.then(() => {
+					this.$router.replace({
+						name: 'inicio',
+					});
+				});
+		},
+	},
 };
 </script>
 
 <style scoped>
+.cerrarsesion {
+	position: absolute;
+	width: 119px;
+	height: 19px;
+	left: 127px;
+	top: 679px;
 
-.cerrarsesion{
+	font-family: ABeeZee;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 19px;
+	/* identical to box height */
 
-position: absolute;
-width: 119px;
-height: 19px;
-left: 127px;
-top: 679px;
+	text-align: center;
 
-font-family: ABeeZee;
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-line-height: 19px;
-/* identical to box height */
+	color: #ffffff;
 
-text-align: center;
+	background: #f3a171;
 
-color:  #FFFFFF;
-
-background: #f3a171;
-
-position: absolute;
-width: 311px;
-height: 53px;
-left: 31px;
-top: 662px;
+	position: absolute;
+	width: 311px;
+	height: 53px;
+	left: 31px;
+	top: 662px;
 }
 
-.buttonVII{
+.buttonVII {
+	position: absolute;
+	width: 222px;
+	height: 19px;
+	left: 79px;
+	top: 578px;
 
-position: absolute;
-width: 222px;
-height: 19px;
-left: 79px;
-top: 578px;
+	font-family: ABeeZee;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 19px;
+	/* identical to box height */
 
-font-family: ABeeZee;
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-line-height: 19px;
-/* identical to box height */
+	text-align: center;
 
-text-align: center;
+	color: #ffffff;
 
-color: #FFFFFF;
+	position: absolute;
+	width: 311px;
+	height: 53px;
+	left: 34px;
+	top: 561px;
 
-position: absolute;
-width: 311px;
-height: 53px;
-left: 34px;
-top: 561px;
+	background: #a65746;
+	/* LIGHT */
 
-background: #A65746;
-/* LIGHT */
-
-box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
-border-radius: 26.5px;
-
+	box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
+	border-radius: 26.5px;
 }
 
-.buttonVI{
+.buttonVI {
+	position: absolute;
+	width: 261px;
+	height: 19px;
+	left: 60px;
+	top: 468px;
 
-position: absolute;
-width: 261px;
-height: 19px;
-left: 60px;
-top: 468px;
+	font-family: ABeeZee;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 19px;
+	/* identical to box height */
 
-font-family: ABeeZee;
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-line-height: 19px;
-/* identical to box height */
+	text-align: center;
 
-text-align: center;
+	color: #ffffff;
 
-color: #FFFFFF;
+	position: absolute;
+	width: 311px;
+	height: 53px;
+	left: 34px;
+	top: 451px;
 
-position: absolute;
-width: 311px;
-height: 53px;
-left: 34px;
-top: 451px;
+	background: #a65746;
+	/* LIGHT */
 
-background: #A65746;
-/* LIGHT */
-
-box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
-border-radius: 26.5px;
-
-
+	box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
+	border-radius: 26.5px;
 }
 
-.buttonV{
+.buttonV {
+	position: absolute;
+	width: 191px;
+	height: 19px;
+	left: 95px;
+	top: 367px;
 
-position: absolute;
-width: 191px;
-height: 19px;
-left: 95px;
-top: 367px;
+	font-family: ABeeZee;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 19px;
+	/* identical to box height */
 
-font-family: ABeeZee;
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-line-height: 19px;
-/* identical to box height */
+	text-align: center;
 
-text-align: center;
+	color: #ffffff;
 
-color: #FFFFFF;
+	position: absolute;
+	width: 311px;
+	height: 53px;
+	left: 34px;
+	top: 350px;
 
-position: absolute;
-width: 311px;
-height: 53px;
-left: 34px;
-top: 350px;
+	background: #a65746;
+	/* LIGHT */
 
-background: #A65746;
-/* LIGHT */
-
-box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
-border-radius: 26.5px;
-
+	box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
+	border-radius: 26.5px;
 }
 
-.buttonIV{
+.buttonIV {
+	position: absolute;
+	width: 195px;
+	height: 19px;
+	left: 93px;
+	top: 266px;
 
-position: absolute;
-width: 195px;
-height: 19px;
-left: 93px;
-top: 266px;
+	font-family: ABeeZee;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 19px;
+	/* identical to box height */
 
-font-family: ABeeZee;
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-line-height: 19px;
-/* identical to box height */
+	text-align: center;
 
-text-align: center;
+	color: #ffffff;
 
-color: #FFFFFF;
+	position: absolute;
+	width: 311px;
+	height: 53px;
+	left: 34px;
+	top: 249px;
 
-position: absolute;
-width: 311px;
-height: 53px;
-left: 34px;
-top: 249px;
+	background: #a65746;
+	/* LIGHT */
 
-background: #A65746;
-/* LIGHT */
-
-box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
-border-radius: 26.5px;
-
+	box-shadow: inset 10px 10px 24px rgba(255, 255, 255, 0.25);
+	border-radius: 26.5px;
 }
 
-.texto{
+.texto {
+	/* ¡Hola!, gracias por formar parte de esta comunidad. */
 
-    /* ¡Hola!, gracias por formar parte de esta comunidad. */
+	position: absolute;
+	width: 312px;
+	height: 114px;
+	left: 26px;
+	top: 87px;
 
+	font-family: ABeeZee;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 38px;
 
-position: absolute;
-width: 312px;
-height: 114px;
-left: 26px;
-top: 87px;
+	color: #402312;
 
-font-family: ABeeZee;
-font-style: italic;
-font-weight: normal;
-font-size: 32px;
-line-height: 38px;
+	/* txt */
 
-color: #402312;;
-
-/* txt */
-
-text-shadow: 0px 2px 80px #FFFFFF;
+	text-shadow: 0px 2px 80px #ffffff;
 }
-
-
-
 </style>

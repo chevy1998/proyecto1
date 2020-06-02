@@ -1,29 +1,35 @@
 <template>
 	<div>
 		<center>
-			<h1 class="env">INFORMACION</h1>
+			<h1 class="envx">INFORMACION</h1>
 			<img
 				src="https://s3-alpha-sig.figma.com/img/7302/7636/47f8c81657d9d18046bc63e605e2af1e?Expires=1589155200&Signature=Dq-chdwyjOtqnnszcjowghu4OADG19n8vUXCK3nCmqpVissmisvRAy7L2ItSb5ARFw~a9vT0M9v7j122bWxsWw7n-6wZL78PCUzE6r-a0ImB1n-z-HkrhXySr4rnmrIDCdkiYLCAh4n7af9xRTmY6mYUVLF9J0yr84AmY3YirXLtW9TlXPu9CC7NSJ~0mgD~7DP5PBxabTsIbJoX8xZKmcwFXlHacmB45k3Yt9S6CxuKBPnhFD3IhWGYidg5k3SvljHqrZ7wP2B9QtTv7EAmButUF7KNilDFWdlK9jxR0tWw1-vAERLrJBgVkWxBszT2kN0AlkZFXJlysq8km2Ws3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-				class="fotos3"
+				class="fotos5"
 			/>
 
 			<form>
 				<div>
-					<p class="trfv"></p>
+					<p class="trfvx"></p>
 
-					<h11 class="muiv">Criolla</h11>
+					<h11 class="muivx">Rex</h11>
 				</div>
 
 				<div>
-					<p class="ghjv"></p>
+					<p class="ghjvx"></p>
 
-					<h12 class="luv">Barrio porfia</h12>
+					<h12 class="luvx">Criolla</h12>
+				</div>
+
+				<div>
+					<p class="ygbvx"></p>
+
+					<h13 class="cuvx">$300000</h13>
 				</div>
 
 				<div>
 					<p class="ygbv"></p>
 
-					<h13 class="cuv">3142927266</h13>
+					<h13 class="cuvx">3142927266</h13>
 				</div>
 			</form>
 		</center>
@@ -35,7 +41,7 @@ export default {};
 </script>
 
 <style scoped>
-.cuv {
+.cuvx {
 	width: 348px;
 	height: 49px;
 	left: 16px;
@@ -54,7 +60,7 @@ export default {};
 	text-shadow: 0px 2px 80px #ffffff;
 }
 
-.ygbv {
+.ygbvx {
 	width: 110px;
 	height: 14px;
 	left: 24px;
@@ -69,7 +75,7 @@ export default {};
 	color: #77787b;
 }
 
-.luv {
+.luvx {
 	width: 348px;
 	height: 49px;
 	left: 16px;
@@ -88,7 +94,7 @@ export default {};
 	text-shadow: 0px 2px 80px #ffffff;
 }
 
-.ghjv {
+.ghjvx {
 	width: 201px;
 	height: 14px;
 	left: 24px;
@@ -103,7 +109,7 @@ export default {};
 	color: #77787b;
 }
 
-.muiv {
+.muivx {
 	width: 348px;
 	height: 49px;
 	left: 16px;
@@ -122,7 +128,7 @@ export default {};
 	text-shadow: 0px 2px 80px #ffffff;
 }
 
-.trfv {
+.trfvx {
 	width: 67px;
 	height: 11px;
 	left: 26px;
@@ -137,7 +143,7 @@ export default {};
 	color: #77787b;
 }
 
-.fotos3 {
+.fotos5 {
 	width: 155px;
 	height: 155px;
 	left: 111px;
@@ -149,7 +155,7 @@ export default {};
 	box-sizing: border-box;
 }
 
-.env {
+.envx {
 	width: 348px;
 	height: 49px;
 	left: 16px;
